@@ -1,0 +1,28 @@
+[Category: Sleep Hygiene]
+Keep a consistent sleep schedule: Go to bed and wake up at the same time every day, even on weekends, to stabilize your circadian rhythm.
+Optimize your sleep environment: Ensure your bedroom is cool (around 18°C or 65°F), quiet, and pitch-black to promote melatonin production.
+Block blue light exposure: Avoid screens (phones, TVs, computers) at least 1 hour before sleep as blue light suppresses melatonin release.
+Avoid late-day caffeine: Do not consume caffeine (coffee, tea, sodas, energy drinks) after 2:00 PM, as caffeine has a half-life of 6 hours.
+Limit alcohol consumption before bed: While alcohol makes you fall asleep faster, it heavily fragments your sleep and suppresses REM cycles.
+Establish a winding-down ritual: Spend 30 minutes reading a physical book, stretching, or meditating to transition your nervous system to parasympathetic dominance.
+
+[Category: Sleep Cycles and Stages]
+Human sleep is structured in cycles: A single sleep cycle lasts 90 to 110 minutes and repeats 4 to 6 times throughout a typical night.
+N1 Sleep (Light Sleep): This is the transition phase between wakefulness and sleep. It represents 5% of total sleep time, with slow rolling eye movements and theta brainwaves.
+N2 Sleep (Light Sleep): Characterized by sleep spindles and K-complexes on the EEG, this stage accounts for about 50% of the night and is crucial for motor skill learning.
+N3 Sleep (Deep Sleep / Slow-Wave Sleep): Marked by high-amplitude, slow delta waves ($0.5-2\text{ Hz}$). This is when physical recovery, muscle repair, tissue growth, and immune strengthening occur.
+REM Sleep (Rapid Eye Movement): This is the active dreaming stage. The brain is highly active (resembling wakefulness), but muscles are paralyzed (atonia). REM is critical for emotional regulation, memory consolidation, and creative problem-solving.
+Cycle distribution over time: Deep slow-wave sleep (N3) occurs predominantly in the first half of the night, whereas REM sleep cycles become longer in the second half of the night.
+
+[Category: Sleep Disorders and Anomalies]
+Sleep Apnea: A disorder marked by repetitive pauses in breathing during sleep. It causes oxygen desaturation and frequent micro-arousals, leading to high daytime sleepiness and low deep sleep.
+Insomnia: Defined as persistent difficulty falling or staying asleep despite having adequate opportunity, often linked to hyperarousal or anxiety.
+Narcolepsy: A chronic neurological disorder that impairs the brain's ability to control sleep-wake cycles, characterized by sudden sleep attacks and muscle weakness (cataplexy).
+Restless Legs Syndrome (RLS): An irresistible urge to move the legs, usually accompanied by uncomfortable sensations, worsening during evening rest and disrupting sleep onset.
+
+[Category: Brainwave Frequencies]
+Delta Waves (0.5 to 4 Hz): High-amplitude, slow brainwaves dominant during N3 deep sleep. High delta percentage indicates deep physical recovery.
+Theta Waves (4 to 8 Hz): Brainwaves associated with deep relaxation, light sleep (N1), and the transition state of drifting off.
+Alpha Waves (8 to 12 Hz): Present when the mind is relaxed, calm, and resting with eyes closed. Often disappears when focusing or falling asleep.
+Beta Waves (12 to 30 Hz): Fast, low-amplitude waves associated with active thinking, alertness, anxiety, and concentration. High beta during sleep indicates cognitive hyperarousal or micro-arousals.
+Sleep Spindles (12 to 14 Hz): Rapid bursts of brain activity during N2 sleep, indicating the brain is actively blocking external noises to protect sleep.

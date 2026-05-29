@@ -1,0 +1,27 @@
+# --- Python / Backend ---
+dreamlens-backend/venv/
+dreamlens-backend/dataset/physionet-sleep-data/
+dreamlens-backend/.pytest_cache/
+dreamlens-backend/__pycache__/
+dreamlens-backend/*.py[cod]
+dreamlens-backend/temp_*.edf
+dreamlens-backend/dreamlens_transformer_v1.pth
+dreamlens-backend/dreamlens_transformer.onnx
+
+# --- Node / Frontend ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/public/dreamlens_transformer.onnx
+frontend/tsconfig.tsbuildinfo
+
+# --- Environment Secrets ---
+.env
+.env.local
+*.env
+*.env.*
+
+# --- OS / IDE files ---
+.vscode/
+.DS_Store
+Thumbs.db
