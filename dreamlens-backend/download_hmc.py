@@ -9,7 +9,7 @@ from tqdm import tqdm
 BASE_URL = "https://physionet.org/files/hmc-sleep-staging/1.1/recordings/"
 LOCAL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dataset", "hmc-sleep-data")
 
-def download_file(client, filename):
+def download_file(client, filename, max_retries=3):
     url = f"{BASE_URL}{filename}"
     filepath = os.path.join(LOCAL_DIR, filename)
     
@@ -17,28 +17,36 @@ def download_file(client, filename):
         print(f"   [INFO] {filename} already exists. Skipping.")
         return True
         
-    print(f"   [DOWNLOAD] Downloading {filename}...")
-    try:
-        # Stream the download to avoid holding large files in memory
-        with client.stream("GET", url) as response:
-            if response.status_code != 200:
-                print(f"   [ERROR] Failed to download {filename} (HTTP Status {response.status_code})")
+    for attempt in range(1, max_retries + 1):
+        if attempt > 1:
+            print(f"   [RETRY] Attempt {attempt}/{max_retries} for {filename}...")
+        else:
+            print(f"   [DOWNLOAD] Downloading {filename}...")
+            
+        try:
+            # Stream the download to avoid holding large files in memory
+            with client.stream("GET", url) as response:
+                if response.status_code != 200:
+                    print(f"   [ERROR] Failed to download {filename} (HTTP Status {response.status_code})")
+                    if attempt == max_retries:
+                        return False
+                    continue
+                    
+                total_size = int(response.headers.get("Content-Length", 0))
+                with open(filepath, "wb") as f, tqdm(
+                    total=total_size, unit="B", unit_scale=True, desc=filename, leave=False
+                ) as bar:
+                    for chunk in response.iter_bytes(chunk_size=8192):
+                        f.write(chunk)
+                        bar.update(len(chunk))
+            print(f"   [SUCCESS] Successfully downloaded {filename}")
+            return True
+        except Exception as e:
+            print(f"   [ERROR] Attempt {attempt} failed: {e}")
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            if attempt == max_retries:
                 return False
-                
-            total_size = int(response.headers.get("Content-Length", 0))
-            with open(filepath, "wb") as f, tqdm(
-                total=total_size, unit="B", unit_scale=True, desc=filename, leave=False
-            ) as bar:
-                for chunk in response.iter_bytes(chunk_size=8192):
-                    f.write(chunk)
-                    bar.update(len(chunk))
-        print(f"   [SUCCESS] Successfully downloaded {filename}")
-        return True
-    except Exception as e:
-        print(f"   [ERROR] Exception occurred downloading {filename}: {e}")
-        if os.path.exists(filepath):
-            os.remove(filepath)
-        return False
 
 def main():
     parser = argparse.ArgumentParser(description="Download HMC Sleep Staging Database Subset from PhysioNet")
@@ -51,7 +59,7 @@ def main():
 
     # We will download subjects starting from SN001 up to the requested number
     # Format is SN001, SN002, ..., SN151
-    with httpx.Client(timeout=60.0) as client:
+    with httpx.Client(timeout=None) as client:
         success_count = 0
         for i in range(1, args.subjects + 1):
             subject_str = f"SN{i:03d}"
