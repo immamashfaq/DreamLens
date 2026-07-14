@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+torch
+mne
+numpy
+groq
+python-dotenv
+motor
+pymongo
+scikit-learn
+httpx
+python-multipart
+scipy
+onnx
+onnxruntime
+pytest

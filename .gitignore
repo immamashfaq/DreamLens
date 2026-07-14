@@ -1,6 +1,6 @@
 # --- Python / Backend ---
 dreamlens-backend/venv/
-dreamlens-backend/dataset/physionet-sleep-data/
+dreamlens-backend/dataset/
 dreamlens-backend/.pytest_cache/
 dreamlens-backend/__pycache__/
 dreamlens-backend/*.py[cod]
